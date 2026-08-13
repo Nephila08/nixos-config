@@ -6,6 +6,13 @@
 	./modules/kitty.nix
 	./modules/fish.nix
 	./modules/neovim.nix
+	./modules/fuzzel.nix
+	./modules/yazi.nix
+	./modules/swaync.nix
+	./modules/swaylock.nix
+	./modules/swayidle.nix
+	./modules/waybar.nix
+	./modules/niri-apps.nix
 	./modules/git.nix
 	
     ];
@@ -19,6 +26,9 @@
 	# --- Terminal --- #
 	fastfetch
 	htop
+
+	# --- Fonts --- #
+	nerd-fonts.jetbrains-mono
     ];
 
     # ------- Version ------- #
