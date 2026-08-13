@@ -25,8 +25,13 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   # ------- Desktop Enviroment ------- #
-  services.displayManager.sddm.enable = true;
+  	# --- Plasma --- #
+  services.displayManager.sddm.enable = false;
   services.desktopManager.plasma6.enable = true;
+
+  	# --- Niri --- #
+  programs.niri.enable = true;
+  services.displayManager.ly.enable = true;
 
   services.xserver.enable = true;  
 
@@ -56,7 +61,6 @@
     extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.fish;
     packages = with pkgs; [
-      kdePackages.kate
     #  thunderbird
     ];
   };
