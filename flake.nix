@@ -4,17 +4,26 @@
     # ------- Inputs ------- #
     inputs = {
 
+	# --- NixPkgs --- #
 	nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
 
+	# --- Home Manager --- #
 	home-manager = {
 
 	    url = "github:nix-community/home-manager/release-26.05";
 	    inputs.nixpkgs.follows = "nixpkgs";
 	};
+
+	# --- NixVim --- #
+	nixvim = {
+
+	    url = "github:nix-community/nixvim";
+	    inputs.nixpkgs.follows = "nixpkgs";
+	};
     };
 
     # ------- Outputs ------- #
-    outputs = inputs @ { self, nixpkgs, home-manager, ... }: {
+    outputs = inputs @ { self, nixpkgs, home-manager, nixvim, ... }: {
 
 	nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
 
